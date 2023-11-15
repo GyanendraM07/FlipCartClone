@@ -1,0 +1,162 @@
+<!-- app.component.html -->
+
+<div class="row justify-content-center">
+    <div class="col-md-8"><br>
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <!-- First Step -->
+        <mat-step [completed]="isFirstStepValid()">
+          <ng-template matStepLabel>Email Id and GST</ng-template>
+          <form [formGroup]="firstFormGroup">
+            <div class="d-flex flex-column align-items-center">
+              <mat-form-field style="width: 80%;">
+                <mat-label>Mobile No</mat-label>
+                <input matInput placeholder="Mobile No" formControlName="mobileNo" required>
+              </mat-form-field>
+              <mat-form-field style="width: 80%;">
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Email Id" formControlName="emailId" required>
+              </mat-form-field>
+              <mat-form-field style="width: 80%;" class="example-full-width">
+                <mat-label>GSTIn</mat-label>
+                <input matInput formControlName="gstNo" placeholder="GSTIn" required>
+              </mat-form-field>
+            </div>
+            <div class="mt-3 d-flex justify-content-center">
+              <button mat-button (click)="stepper.next()" [disabled]="!isFirstStepValid()">Register And Continue</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <!-- Second Step -->
+        <mat-step [completed]="isSecondStepValid()">
+          <ng-template matStepLabel>Additional Information</ng-template>
+          <form [formGroup]="secondFormGroup">
+            <div class="d-flex flex-column align-items-center">
+              <mat-form-field style="width: 80%;">
+                <mat-label>Organisation Name</mat-label>
+                <input matInput formControlName="companyname" placeholder="Organisation Name" required>
+              </mat-form-field>
+              <mat-form-field style="width: 80%;">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY" required>
+              </mat-form-field>
+              <mat-form-field style="width: 80%;">
+                <mat-label>Registration No</mat-label>
+                <input matInput formControlName="registration" placeholder="Registration No" required>
+              </mat-form-field>
+            </div>
+            <div class="mt-3 d-flex justify-content-center">
+              <button mat-button (click)="stepper.previous()">Back</button>
+              <button mat-button (click)="stepper.next()" [disabled]="!isSecondStepValid()">Next</button>
+            </div>
+          </form>
+        </mat-step>
+  
+        <!-- Third Step -->
+        <mat-step [completed]="isThirdStepValid()">
+          <ng-template matStepLabel>Password Creation</ng-template>
+          <form [formGroup]="thirdFormGroup">
+            <div class="d-flex flex-column align-items-center">
+              <mat-form-field style="width: 80%;">
+                <mat-label>UserName</mat-label>
+                <input matInput formControlName="email2">
+              </mat-form-field>
+              <mat-form-field style="width: 80%;">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password">
+              </mat-form-field>
+              <mat-form-field style="width: 80%;">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName="cpassword" type="password">
+              </mat-form-field>
+            </div>
+            <div class="mt-3 d-flex justify-content-center">
+              <button mat-button (click)="stepper.previous()">Back</button>
+              <button mat-button (click)="onSubmit()" [disabled]="!isThirdStepValid()">Submit</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+  </div>
+  
+<div class="styles__SellWrapperMob-sc-1a6y1nh-1 biJWFu">
+    <div class="styles__DataBackgroundColor-sc-1a6y1nh-9 eeVOUE">
+        <div class="styles__HeadingWrapper-sc-1a6y1nh-7 gpSiVm"><span
+                class="styles__HeadingBold-sc-1a6y1nh-8 cidZft">Why sell on Flipkart?</span></div>
+        <div class="styles__SellWrapper-sc-1a6y1nh-0 iYFsOb" style="display: flex;">
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Truck.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Sell Across India</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">Reach over 50 crore+ customers across
+                        27000+ pincodes</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Percent.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Higher Profits</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">With 0% commission* , you take 100%
+                        profits with you</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Account.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Account Management</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">Our Dedicated managers will help your
+                        business on Flipkart</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Charges.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Lower Return Charges</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">With our flat and low return charges,
+                        ship your products stress-free</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Calculator.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Simple Pricing Calculator</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">Use our simple pricing calculator to
+                        decide the best and competitive selling price for your product</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Support.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">24x7 Seller Support</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">All your queries and issues are answered
+                        by our dedicated Seller Support Team</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Payments.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Fast &amp; Regular Payments</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">Get payments as fast as 7-10 days from
+                        the date of dispatch</p>
+                </div>
+            </div>
+            <div class="styles__SellList-sc-1a6y1nh-2 jONxuj">
+                <div class="styles__SellListIcon-sc-1a6y1nh-3 jFFOwl"><img
+                        src="https://img1a.flixcart.com/fk-sp-static/images/Onboarding_logo_Mobile.svg"></div>
+                <div class="styles__SellContent-sc-1a6y1nh-4 iHUFqn">
+                    <p class="styles__SellListHeader-sc-1a6y1nh-5 hSVYJQ">Business on the go</p>
+                    <p class="styles__SellListDescription-sc-1a6y1nh-6 iRIdCN">Download our Flipkart Seller App to
+                        manage your business anywhere, anytime</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+package com.wishcart.admin.controller;
+
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/admin-seller")
+public class AdminSellerController {
+	
+	 private final RestTemplate restTemplate;
+
+	    @Autowired
+	    public AdminSellerController(RestTemplate restTemplate) {
+	        this.restTemplate = restTemplate;
+	    }
+
+	
+	@GetMapping("/request")
+	public ResponseEntity<HashMap<String, Object>> getSellerRequest() {
+		return null;
+
+	}
+}

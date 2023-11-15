@@ -1,0 +1,47 @@
+package com.wishcart.admin.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/admin-seller")
+public class AdminSellerController {
+	
+	 private final RestTemplate restTemplate;
+
+	    @Autowired
+	    public AdminSellerController(RestTemplate restTemplate) {
+	        this.restTemplate = restTemplate;
+	    }
+
+	    @GetMapping("/sellers/all")
+	    public ResponseEntity<List<Map<String, Object>>> getAllSellers() {
+	        String sellerServiceUrl = "http://localhost:9090/sellers/sellerData";
+	        ResponseEntity<List<Map<String, Object>>> response = restTemplate.exchange(
+	        		sellerServiceUrl,
+	                HttpMethod.GET,
+	                null,
+	                new ParameterizedTypeReference<List<Map<String, Object>>>() {}
+	            );
+
+	        // Process the response and return data to the client
+	        return response;
+	    }
+	    
+	@GetMapping("/request")
+	public ResponseEntity<HashMap<String, Object>> getSellerRequest() {
+		return null;
+
+	}
+	
+}

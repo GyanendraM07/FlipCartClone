@@ -1,0 +1,5 @@
+package com.wishcart.admin.controller;
+
+public class AdminCustomerController {
+
+}

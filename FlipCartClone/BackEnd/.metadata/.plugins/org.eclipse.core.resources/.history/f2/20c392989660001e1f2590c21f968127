@@ -1,0 +1,17 @@
+package com.wishcart.admin.controller;
+
+import java.util.HashMap;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/admin-seller")
+public class AdminSellerController  {
+	
+
+public ResponseEntity<HashMap<String,Object>> getPendingRequest(){
+	return null;
+
+}}

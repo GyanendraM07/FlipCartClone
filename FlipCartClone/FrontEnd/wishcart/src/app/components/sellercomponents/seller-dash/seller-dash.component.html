@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	
+  </mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav id="sidenav" class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+	  <mat-nav-list>
+		<mat-list-item (click)="navigateTo('/seller-dash/add-product','addProduct')" routerLinkActive="active" class="parent" [ngClass]="{'clicked': clickedItem === 'addProduct'}">
+		  <div class="menu-content">
+			<mat-icon mat-list-icon>add</mat-icon>
+			<span class="full-width" *ngIf="isExpanded || isShowing" [ngClass]="{'textClicked': clickedItem === 'addProduct'}">Add Product</span>
+		  </div>
+		</mat-list-item>
+  
+		<mat-list-item (click)="navigateTo('/seller-dash/manage-product','manageProduct')" routerLinkActive="active" class="parent" [ngClass]="{'clicked': clickedItem === 'manageProduct'}">
+		  <div class="menu-content">
+			<mat-icon mat-list-icon>store</mat-icon>
+			<span class="full-width" *ngIf="isExpanded || isShowing" [ngClass]="{'textClicked': clickedItem === 'addProduct'}">Manage Products</span>
+		  </div>
+		</mat-list-item>
+  
+		<mat-list-item (click)="navigateTo('/seller-dash/orders','pendingOrders')" routerLinkActive="active" class="parent" [ngClass]="{'clicked': clickedItem === 'pendingOrders'}">
+		  <div class="menu-content">
+			<mat-icon mat-list-icon>pending</mat-icon>
+			<span class="full-width" *ngIf="isExpanded || isShowing" [ngClass]="{'textClicked': clickedItem === 'pendingOrders'}">Pending orders</span>
+		  </div>
+		</mat-list-item>
+  
+		<mat-list-item (click)="navigateTo('/seller-dash/orders','completeOrders')" routerLinkActive="active" class="parent" [ngClass]="{'clicked': clickedItem === 'completeOrders'}">
+		  <div class="menu-content">
+			<mat-icon mat-list-icon>done</mat-icon>
+			<span class="full-width" *ngIf="isExpanded || isShowing" [ngClass]="{'textClicked': clickedItem === 'completeOrders'}">Completed Orders</span>
+		  </div>
+		</mat-list-item>
+  
+		<mat-list-item (click)="navigateTo('/seller-dash/raise-request','raiseRequest')" routerLinkActive="active" class="parent" [ngClass]="{'clicked': clickedItem === 'raiseRequest'}">
+		  <div class="menu-content">
+			<mat-icon mat-list-icon>send</mat-icon>
+			<span class="full-width" *ngIf="isExpanded || isShowing" [ngClass]="{'textClicked': clickedItem === 'raiseRequest'}">Raise Request</span>
+		  </div>
+		</mat-list-item>
+	  </mat-nav-list>
+	  <mat-nav-list>
+	  </mat-nav-list>
+	</mat-sidenav>
+	<div class="example-sidenav-content">
+	  <!-- Router Outlet for dynamic content -->
+	  <router-outlet></router-outlet>
+	</div>
+  </mat-sidenav-container>
+  

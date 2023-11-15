@@ -1,0 +1,14 @@
+.outlined-input {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ced4da; /* Default border color */
+  border-radius: 4px;
+  padding: 10px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.outlined-input:focus {
+  border-color: #80bdff; /* Border color when focused */
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Box shadow when focused */
+}

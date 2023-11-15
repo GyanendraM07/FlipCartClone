@@ -1,0 +1,10 @@
+package com.wishcart.users.service;
+
+import org.springframework.stereotype.Service;
+
+import com.wishcart.users.serviceImpl.CustomerServiceImpl;
+
+@Service
+public class CustomerService implements CustomerServiceImpl{
+
+}

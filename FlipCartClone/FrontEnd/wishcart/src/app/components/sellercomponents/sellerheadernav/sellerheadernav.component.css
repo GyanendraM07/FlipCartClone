@@ -1,0 +1,71 @@
+
+.parent-div {
+    align-items: center; /* Vertical alignment */
+    justify-content: space-between; /* Adjust if needed */
+}
+
+.header1-nav {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    border: 1px solid red ;
+    height: 1.5cm;
+    width: 100%;
+}
+.header1-nav > * {
+    margin-right: 35px; /* Adjust the spacing between elements */
+}
+
+.search{
+    width:12cm;
+    border: 0;
+    outline: 0 none;
+    font-size: 17px;
+    height: 40px;
+    background-color:	#A9A9A9;
+    color: white;
+}
+#searchicon{
+    height: 40px;
+    width:40px;
+    background-color: 	#A9A9A9;
+    color: white;
+    border: 0;
+    outline: 0 none;
+}
+.sign-in{
+    background-color: aqua;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button {
+    margin-left: 5px; /* Adjust the margin as needed for spacing */
+}
+.sign-in img {
+    margin-right: 15px; /* Adjust the value as needed */
+}
+.span{
+    margin-right: 10px; 
+    font-size: 16px; 
+}
+
+/* Add this to your styles.scss or styles.css file */
+
+/* Increase the size of the image */
+.seller-icon {
+    width: 25px; /* Adjust the width as needed */
+    height: 25px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+.cart-icon {
+    width: 25px; /* Adjust the width as needed */
+    height: 25px; /* Adjust the height as needed */
+}
+
+a {
+    text-decoration: none;
+}
+#logo{
+    margin-left: 1cm;
+}

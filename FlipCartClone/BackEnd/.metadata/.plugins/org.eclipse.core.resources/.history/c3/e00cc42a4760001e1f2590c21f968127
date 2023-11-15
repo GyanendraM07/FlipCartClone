@@ -1,0 +1,22 @@
+package com.wishcart.users.service;
+
+import java.util.HashMap;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.wishcart.users.model.Customer;
+import com.wishcart.users.serviceImpl.CustomerServiceImpl;
+
+@Service
+public class CustomerService implements CustomerServiceImpl{
+
+	public ResponseEntity<HashMap<String, Object>> registerCustomer(Customer customer) {
+		return null;
+	}
+
+	public ResponseEntity<HashMap<String, Object>> customerAuthLogin(String userName, String password) {
+		return null;
+	}
+
+}

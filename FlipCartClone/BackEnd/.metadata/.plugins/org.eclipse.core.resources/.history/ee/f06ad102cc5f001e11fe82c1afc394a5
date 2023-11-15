@@ -1,0 +1,44 @@
+# Server Configuration
+server.port=9090
+
+# Eureka Configuration
+eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+
+# Spring Application Configuration
+spring.application.name=WishCart-GateWay
+
+# Spring Cloud Gateway Configuration
+spring.cloud.gateway.routes[0].id=mobile-route
+spring.cloud.gateway.routes[0].uri=http://localhost:8082/
+spring.cloud.gateway.routes[0].predicates[0]=Path=/mobile/**
+# Spring Cloud Gateway Configuration
+spring.cloud.gateway.routes[1].id=Users-route
+spring.cloud.gateway.routes[1].uri=http://localhost:8081/
+spring.cloud.gateway.routes[1].predicates[0]=Path=/users/**
+
+#spring.cloud.gateway.default-filters[0]=TokenRelay
+#spring.cloud.gateway.routes[0].id=microservice-1
+#spring.cloud.gateway.routes[0].uri=http://localhost:8082/
+#spring.cloud.gateway.routes[0].predicates[0]=Path=/api/**
+#spring.cloud.gateway.routes[1].id=microservice-2
+#spring.cloud.gateway.routes[1].uri=http://localhost:8084/
+#spring.cloud.gateway.routes[1].predicates[0]=Path=/create/**
+#spring.cloud.gateway.routes[2].id=microservice-2
+#spring.cloud.gateway.routes[2].uri=http://localhost:8084/
+#spring.cloud.gateway.routes[2].predicates[0]=Path=/profile/**
+# Add more routes as needed
+
+# Global CORS Configuration
+spring.cloud.gateway.globalcors.corsConfigurations['/**'].allowedOrigins=*
+spring.cloud.gateway.globalcors.corsConfigurations['/**'].allowedHeaders=*
+spring.cloud.gateway.globalcors.corsConfigurations['/**'].allowedMethods=*
+
+
+# Security Configuration
+#spring.security.oauth2.client.provider.my-keycloak-provider.issuer-uri=http://localhost:8080/auth/realms/sample
+#spring.security.oauth2.client.registration.keycloak-spring-gateway-client.provider=my-keycloak-provider
+#spring.security.oauth2.client.registration.keycloak-spring-gateway-client.client-id=social_service
+#spring.security.oauth2.client.registration.keycloak-spring-gateway-client.client-secret=3cc86b99-db37-42af-aee0-04c61a331b9d
+#spring.security.oauth2.client.registration.keycloak-spring-gateway-client.authorization-grant-type=authorization_code
+#spring.security.oauth2.client.registration.keycloak-spring-gateway-client.redirect-uri={baseUrl}/login/oauth2/code/keycloak
+#spring.security.oauth2.resourceserver.jwt.jwk-set-uri=http://localhost:8080/auth/realms/sample/protocol/openid-connect/certs
